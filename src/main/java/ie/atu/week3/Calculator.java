@@ -70,7 +70,7 @@ public class Calculator {
                 }
                 break;
 
-            /**
+            /*
              *  KEEP ON BRANCH UNTIL VIDEO IS MADE
              */
             case "exp":

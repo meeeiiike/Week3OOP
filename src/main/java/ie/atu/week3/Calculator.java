@@ -14,6 +14,11 @@ public class Calculator {
         System.out.println(sum);
     }
 
+    public static void subtract(int firstNum, int secondNum) {
+        int sum = Math.subtractExact(firstNum, secondNum);
+        System.out.println(sum);
+    }
+
     public static void main(String[] args) {
         /*
          *  | Main Method |
@@ -37,7 +42,7 @@ public class Calculator {
                 add(firstNum, secondNum);
                 break;
             case "subtract":
-                add(firstNum, secondNum);
+                subtract(firstNum, secondNum);
                 break;
             case "multiply":
                 add(firstNum, secondNum);

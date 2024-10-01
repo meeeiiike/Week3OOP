@@ -19,13 +19,18 @@ public class Calculator {
         System.out.println(sum);
     }
 
+    public static void multiply(int firstNum, int secondNum) {
+        int sum = Math.multiplyExact(firstNum, secondNum);
+        System.out.println(sum);
+    }
+
+    /*
+     *  | Main Method |
+     * Prompt user for two numbers and
+     * an operation to perform. These include:
+     * add, subtract, multiply, divide or exponential
+     */
     public static void main(String[] args) {
-        /*
-         *  | Main Method |
-         * Prompt user for two numbers and
-         * an operation to perform. These include:
-         * add, subtract, multiply, divide or exponential
-         */
         System.out.println("please enter the first number");
         Scanner sc = new Scanner(System.in);
         int firstNum = sc.nextInt();
@@ -45,7 +50,7 @@ public class Calculator {
                 subtract(firstNum, secondNum);
                 break;
             case "multiply":
-                add(firstNum, secondNum);
+                multiply(firstNum, secondNum);
                 break;
             case "divide":
                 add(firstNum, secondNum);

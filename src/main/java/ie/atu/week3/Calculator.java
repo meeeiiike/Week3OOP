@@ -11,18 +11,28 @@ public class Calculator {
      */
     public static void add(int firstNum, int secondNum) {
         int sum = Math.addExact(firstNum, secondNum);
-        System.out.println(sum);
+        System.out.println("Answer: " + sum);
     }
 
     public static void subtract(int firstNum, int secondNum) {
         int sum = Math.subtractExact(firstNum, secondNum);
-        System.out.println(sum);
+        System.out.println("Answer: " + sum);
     }
 
     public static void multiply(int firstNum, int secondNum) {
         int sum = Math.multiplyExact(firstNum, secondNum);
-        System.out.println(sum);
+        System.out.println("Answer: " + sum);
     }
+
+    public static void divide(int firstNum, int secondNum) {
+       double sum = (double) firstNum / secondNum;
+        System.out.println("Answer: " + sum);
+    }
+
+    /**
+     *  KEEP ON BRANCH UNTIL VIDEO IS MADE
+     */
+
 
     /*
      *  | Main Method |
@@ -53,8 +63,16 @@ public class Calculator {
                 multiply(firstNum, secondNum);
                 break;
             case "divide":
-                add(firstNum, secondNum);
+                if (secondNum<=0){
+                    System.out.println("Invalid! Number must be greater than 0");
+                } else {
+                    divide(firstNum, secondNum);
+                }
                 break;
+
+            /**
+             *  KEEP ON BRANCH UNTIL VIDEO IS MADE
+             */
             case "exp":
                 break;
             default:

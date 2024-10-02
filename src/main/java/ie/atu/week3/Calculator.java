@@ -1,5 +1,6 @@
 package ie.atu.week3;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Calculator {
@@ -39,41 +40,46 @@ public class Calculator {
      * Add, subtract, multiply, divide and exponential of two numbers
      */
     public static void main(String[] args) {
-        System.out.println("please enter the first number");
-        Scanner sc = new Scanner(System.in);
-        int firstNum = sc.nextInt();
-        System.out.println("please enter the second number");
-        int secondNum = sc.nextInt();
-        System.out.println("please enter the operation");
-        String operation = sc.next();
 
-        /*
-         * switch statement to call operation methods
-         */
-        switch (operation) {
-            case "add":
-                add(firstNum, secondNum);
-                break;
-            case "subtract":
-                subtract(firstNum, secondNum);
-                break;
-            case "multiply":
-                multiply(firstNum, secondNum);
-                break;
-            case "divide":
-                if (secondNum<=0){
-                    System.out.println("Invalid! Number must be greater than 0");
-                } else {
-                    divide(firstNum, secondNum);
-                }
-                break;
-            case "exp":
-                exp(firstNum, secondNum);
-                break;
-            default:
-                System.out.println("Invalid operation");
-                break;
-        }
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("please enter first number");
+            int firstNum = sc.nextInt();
+            System.out.println("please enter second number");
+            int secondNum = sc.nextInt();
+            System.out.println("please enter the operation");
+            String operation = sc.next();
+
+            /*
+             * switch statement to call operation methods
+             */
+            switch (operation) {
+                case "add":
+                    add(firstNum, secondNum);
+                    break;
+                case "subtract":
+                    subtract(firstNum, secondNum);
+                    break;
+                case "multiply":
+                    multiply(firstNum, secondNum);
+                    break;
+                case "divide":
+                    if (secondNum <= 0) {
+                        System.out.println("Invalid! Number must be greater than 0");
+                    } else {
+                        divide(firstNum, secondNum);
+                    }
+                    break;
+                case "exp":
+                    exp(firstNum, secondNum);
+                    break;
+                default:
+                    System.out.println("Invalid operation");
+                    break;
+            }
+            System.out.println("\nType 'quit' to exit\nAny key to Continue\n");
+        } while (!Objects.equals(sc.next(), "quit"));
+        System.out.println("Goodbye!");
     }
 }
 

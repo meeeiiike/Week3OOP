@@ -29,8 +29,8 @@ public class Calculator {
     }
 
     public static void exp(int firstNum, int secondNum) {
-        double exp = Math.pow(firstNum, secondNum);
-        System.out.println("Answer: " + exp);
+        double sum = Math.pow(firstNum, secondNum);
+        System.out.println("Answer: " + sum);
     }
 
     /**

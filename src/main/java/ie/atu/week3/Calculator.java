@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    /**
-     *
-     *  Creating Add Method using Math Class
-     *  and Printing to Screen
+    /*
+     *  Methods used for calculator operations
      */
     public static void add(int firstNum, int secondNum) {
         int sum = Math.addExact(firstNum, secondNum);
@@ -29,16 +27,16 @@ public class Calculator {
         System.out.println("Answer: " + sum);
     }
 
+    public static void exp(int firstNum, int secondNum) {
+        double exp = Math.pow(firstNum, secondNum);
+        System.out.println("Answer: " + exp);
+    }
+
     /**
-     *  KEEP ON BRANCH UNTIL VIDEO IS MADE
-     */
-
-
-    /*
      *  | Main Method |
-     * Prompt user for two numbers and
-     * an operation to perform. These include:
-     * add, subtract, multiply, divide or exponential
+     * Prompt user for two numbers.
+     * Then prompt an operation to perform. These include:
+     * Add, subtract, multiply, divide and exponential of two numbers
      */
     public static void main(String[] args) {
         System.out.println("please enter the first number");
@@ -50,7 +48,7 @@ public class Calculator {
         String operation = sc.next();
 
         /*
-         * switch statement for all operation methods
+         * switch statement to call operation methods
          */
         switch (operation) {
             case "add":
@@ -69,17 +67,13 @@ public class Calculator {
                     divide(firstNum, secondNum);
                 }
                 break;
-
-            /*
-             *  KEEP ON BRANCH UNTIL VIDEO IS MADE
-             */
             case "exp":
+                exp(firstNum, secondNum);
                 break;
             default:
                 System.out.println("Invalid operation");
                 break;
         }
-
     }
 }
 

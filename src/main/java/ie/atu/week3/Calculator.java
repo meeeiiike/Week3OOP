@@ -24,7 +24,7 @@ public class Calculator {
     }
 
     public static void divide(int firstNum, int secondNum) {
-       double sum = (double) firstNum / secondNum;
+        double sum = (double) firstNum / secondNum;
         System.out.println("Answer: " + sum);
     }
 
@@ -82,4 +82,3 @@ public class Calculator {
         System.out.println("Goodbye!");
     }
 }
-

@@ -28,6 +28,11 @@ public class Calculator {
         System.out.println("Answer: " + sum);
     }
 
+    public static void exp(int firstNum, int secondNum) {
+        double sum = Math.pow(firstNum, secondNum);
+        System.out.println("Answer: " + sum);
+    }
+
     /**
      *  | Main Method |
      * Prompt user for two numbers.
@@ -64,6 +69,9 @@ public class Calculator {
                     } else {
                         divide(firstNum, secondNum);
                     }
+                    break;
+                case "exp":
+                    exp(firstNum, secondNum);
                     break;
                 default:
                     System.out.println("Invalid operation");

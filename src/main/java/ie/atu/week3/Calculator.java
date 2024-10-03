@@ -79,6 +79,6 @@ public class Calculator {
             }
             System.out.println("\nType 'quit' to exit\nAny key to Continue\n");
         } while (!Objects.equals(sc.next(), "quit"));
-        System.out.println("Goodbye!");
+        System.out.println("Goodbye!!");
     }
 }

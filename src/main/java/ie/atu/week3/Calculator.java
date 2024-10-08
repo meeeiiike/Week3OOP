@@ -1,6 +1,5 @@
 package ie.atu.week3;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Calculator {
@@ -40,32 +39,40 @@ public class Calculator {
      * Add, subtract, multiply, divide and exponential of two numbers
      */
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        do {
-            System.out.println("please enter first number");
-            int firstNum = sc.nextInt();
-            System.out.println("please enter second number");
-            int secondNum = sc.nextInt();
-            System.out.println("please enter the operation");
+        while (true) {
+            System.out.println("\n   Please enter the operation:\n  +, -, *, / or q to quit");
             String operation = sc.next();
 
             /*
-             * switch statement to call operation methods
+             * Logic for user quitting program
+             */
+            if (operation.equals("q") || operation.equals("Q")) {
+                System.out.println("Goodbye!");
+                break; // break will exit both loops!!! very noice
+            }
+
+            System.out.println("\nplease enter first number");
+            int firstNum = sc.nextInt();
+            System.out.println("please enter second number");
+            int secondNum = sc.nextInt();
+            /*
+             * Switch statement to call operation methods
              */
             switch (operation) {
-                case "add":
+                case "+":
                     add(firstNum, secondNum);
                     break;
-                case "subtract":
+                case "-":
                     subtract(firstNum, secondNum);
                     break;
-                case "multiply":
+                case "*":
                     multiply(firstNum, secondNum);
                     break;
-                case "divide":
+                case "/":
                     if (secondNum <= 0) {
                         System.out.println("Invalid! Number must be greater than 0");
+                        continue; // continue is used to restart loop!!! noice
                     } else {
                         divide(firstNum, secondNum);
                     }
@@ -77,8 +84,6 @@ public class Calculator {
                     System.out.println("Invalid operation");
                     break;
             }
-            System.out.println("\nType 'quit' to exit\nAny key to Continue\n");
-        } while (!Objects.equals(sc.next(), "quit"));
-        System.out.println("Goodbye!");
+        }
     }
 }
